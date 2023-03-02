@@ -60,7 +60,7 @@ namespace _goptical {
         find intersection point between conical section and line,
         telescope optics, page 266
       */
-      double a = (math::square(by) + math::square(bx));
+      double a = (math::square(by) + math::square(bx))/_roc;
       double b = ((by * ay + bx * ax) / _roc - bz) * 2.0;
       double c = (math::square(ay) + math::square(ax)) / _roc - 2.0 * az;
 
@@ -72,17 +72,40 @@ namespace _goptical {
         }
       else
         {
-          double d = math::square(b) - 4.0 * a * c / _roc;
+          double d = math::square(b) - 4.0 * a * c;
 
           if (d < 0)
             return false;               // no intersection
 
           double s = sqrt(d);
 
-          if (a * bz < 0)
-            s = -s;
+          double t1,t2;
 
-          t = (2 * c) / (s - b);
+          t1 = (-b+s)/(2*a);
+          t2 = (-b-s)/(2*a);
+
+          double eps=1e-6;
+
+          if(t1>eps && t2<eps)
+          {
+            t=t1;
+          }
+          else if(t2>eps && t1<eps)
+          {
+            t=t2;
+          }
+          else if(t1>eps && t2>eps)
+          {
+            if(t1<t2)
+              t = t1;
+            else
+              t = t2;
+          }
+          else
+          {
+            t = 0;
+          }
+
         }
 
       if (t <= 0)               // ignore intersection if before ray origin

@@ -105,7 +105,8 @@ namespace _goptical {
       double t = (s - (bz * d + ax_bx + ay_by)); // / bz2_by2_bx2;
 
       // do not colide if line intersection is before ray start position
-      if (t <= 0)
+      double eps = 1e-6;
+      if (t <= eps)
         return false;
 
       // intersection point

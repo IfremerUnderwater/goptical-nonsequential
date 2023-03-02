@@ -72,7 +72,8 @@ namespace _goptical {
 
       double    a = -ray.origin().z() / s;
 
-      if (a < 0)
+      double eps = 1e-6;
+      if (a < eps)
         return false;
 
       point = ray.origin() + ray.direction() * a;

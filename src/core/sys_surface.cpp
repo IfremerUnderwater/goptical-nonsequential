@@ -104,7 +104,9 @@ namespace _goptical {
         return false;
 
       _curve->normal(pt.normal(), pt.origin());
-      if (ray.direction().z() < 0)
+      /*if (ray.direction().z() < 0)
+        pt.normal() = -pt.normal();*/
+      if (ray.direction()*pt.normal() > 0)
         pt.normal() = -pt.normal();
 
       return true;
