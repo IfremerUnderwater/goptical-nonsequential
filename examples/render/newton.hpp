@@ -229,8 +229,8 @@ Newton<X>::Newton()
       std::cout << "done" << std::endl;
   } 
 
-  cv::waitKey(0);
-  exit(-1);
+  //cv::waitKey(0);
+  //exit(-1);
 
 
   // viewport setup

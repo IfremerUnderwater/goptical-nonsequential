@@ -22,6 +22,8 @@
 
 */
 
+#include "newton.hpp"
+
 #include <X11/Xlib.h>
 
 #include <goptical/core/io/RendererX11>
@@ -29,7 +31,6 @@
 #include <goptical/core/math/Transform>
 
 #include "app.hpp"
-#include "newton.hpp"
 
 using namespace goptical;
 

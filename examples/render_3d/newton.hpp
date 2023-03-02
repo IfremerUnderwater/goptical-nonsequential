@@ -72,7 +72,7 @@ Newton<X>::Newton()
   sys::Image            image(newton.get_focal_plane(), 15);
   sys.add(image);
 
-  exit(-1);
+  //exit(-1);
 
   // ray trace
 

@@ -67,7 +67,7 @@ OpenglApp::OpenglApp()
   app = this;
 
   glutInit( &argc, &argv );
-  glutInitWindowSize( 640, 480 );
+  glutInitWindowSize( 800, 600 );
   glutInitDisplayMode(GLUT_RGB | GLUT_DOUBLE | GLUT_DEPTH);
   glutCreateWindow("goptical/core OpenGL renderer");
 
