@@ -1,0 +1,10 @@
+
+#include "goptical/core/curve/convex_quartic.hpp"
+#include "goptical/core/curve/convex_quartic.hxx"
+
+namespace goptical {
+  namespace curve {
+    using _goptical::curve::ConvexQuartic;
+  }
+}
+

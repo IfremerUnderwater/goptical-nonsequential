@@ -9,6 +9,7 @@ set(MODULE_SOURCES
   curve_conic_base.cpp
   curve_conic.cpp
   curve_flat.cpp
+  curve_convex_quartic.cpp
   curve_foucault.cpp
   curve_grid.cpp
   curve_parabola.cpp
