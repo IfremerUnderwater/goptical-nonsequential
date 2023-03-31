@@ -25,3 +25,5 @@ add_library(${PROJECT_NAME} SHARED ${SOURCES})
 
 target_link_libraries(${PROJECT_NAME}_static ${LIBS})
 target_link_libraries(${PROJECT_NAME} ${LIBS})
+
+install(TARGETS ${PROJECT_NAME}_static DESTINATION lib EXPORT goptical-targets)
