@@ -121,7 +121,9 @@ namespace _goptical {
 
     const math::Transform<3> & system::transform_cache_update(const Element &from, const Element &to) const
     {
-      assert(&from != &to);
+      // this line has been commented because in multibounce case you can have multiple intersections on the same element
+      // Be careful as we do not limit the number of bounces ... (don't know how it could work without this in the non C++11 version)
+      //assert(&from != &to);
 
       math::Transform<3> * & e = transform_cache_entry(from.id(), to.id());
 
@@ -273,7 +275,7 @@ namespace _goptical {
         {
           Element *j = &get_element(i);
 
-          if (j == origin || !j->is_enabled())
+          if (!j->is_enabled())
             continue;
 
           if ((s = dynamic_cast<Surface*>(j)))
